@@ -43,8 +43,8 @@ function ShowElectricity() {
     { name: "Slovenia", code: "SI" },
     { name: "Spain", code: "ES" },
     { name: "Sweden", code: "SE" },
-    { name: "United Kingdom", code: "GB" }
-];
+    { name: "United Kingdom", code: "GB" },
+  ];
 
   const USStates = [
     { name: "Alabama", code: "AL" },
@@ -99,7 +99,6 @@ function ShowElectricity() {
     { name: "Wyoming", code: "WY" },
 ];
 
-  const HEROKU_API_URL = "https://traco2.herokuapp.com";
 
   const resetStates = () => {
     setElectricityUnit("");
@@ -111,7 +110,7 @@ function ShowElectricity() {
   const handleSubmit = async () => {
     try {
       const response = await fetch(
-        `${HEROKU_API_URL}/api/fetch-electricity?attributes=${electricityUnit}&attributes=${electricityValue}&attributes=${country}&attributes=${state}`
+        `/api/fetch-electricity?attributes=${electricityUnit}&attributes=${electricityValue}&attributes=${country}&attributes=${state}`
       );
 
       if (!response.ok) {
@@ -133,7 +132,7 @@ function ShowElectricity() {
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-      alert('Server encountered an error. Please try again.')
+      alert("Server encountered an error. Please try again.");
       resetStates();
     }
   };
@@ -141,9 +140,9 @@ function ShowElectricity() {
   const handleSubmitButton = async () => {
     try {
       const response = await axios.post(
-        `${HEROKU_API_URL}/append-data`,
+        "http://localhost:3000/append-data",
         emissions
-      );
+      ); // Adjust the URL based on your Flask server configuration
       console.log(response.data.message);
       alert("Data submitted successfully!")
     } catch (error) {
@@ -151,6 +150,7 @@ function ShowElectricity() {
       alert('Have you clicked on the "Calculate" button?');
     }
   };
+
   return (
     <div className="App">
       <Header />

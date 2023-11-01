@@ -9,10 +9,7 @@ from datetime import date
 app = Flask(__name__)
 CORS(app)
 
-import os
-API_KEY = os.environ.get('API_KEY')
-print(API_KEY)
-
+API_KEY = 'mnpPJeIBGqdmWMgaMaVxQ'
 url = 'https://www.carboninterface.com/api/v1/estimates'
 headers = {
     'Authorization': f'Bearer {API_KEY}',
@@ -210,11 +207,5 @@ def get_today_emissions():
     
     return jsonify(emissions_data)
 
-@app.route('/favicon.ico')
-def favicon():
-    return app.send_static_file('favicon.ico')
-
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+if __name__ == "__main__":
+    app.run(debug=True)

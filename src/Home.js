@@ -45,7 +45,7 @@ function Home() {
       "fuel combustion": "#00B3E6",
     };
 
-    fetch("https://git.heroku.com/traco2.git/get-today-emissions")
+    fetch("/get-today-emissions")
       .then((response) => response.json())
       .then((data) => {
         data.forEach((entry) => {
