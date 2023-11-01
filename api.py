@@ -11,6 +11,7 @@ CORS(app)
 
 import os
 API_KEY = os.environ.get('API_KEY')
+print(API_KEY)
 
 url = 'https://www.carboninterface.com/api/v1/estimates'
 headers = {
@@ -208,6 +209,11 @@ def get_today_emissions():
                 })
     
     return jsonify(emissions_data)
+
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
