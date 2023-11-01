@@ -93,3 +93,30 @@ select:hover {
 select:focus {
   border-color: #087830;  /* Even darker green for focus effect */
 }
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.table-container {
+  margin-right: 20px; /* Add some space between the table and the chart */
+}
+
+.doughnut-container {
+  width: 20%; /* Adjust the width as needed */
+  flex-grow: 1;
+}
+
+.table-container {
+  max-width: 400px; /* or whatever maximum width you want for your table */
+}
+.main-container {
+  min-height: 100vh; /* vh is viewport height */
+}
+.your-container {
+  overflow: hidden;
+}
+
+

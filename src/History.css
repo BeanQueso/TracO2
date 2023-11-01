@@ -1,0 +1,123 @@
+/* App.css */
+
+.App {
+    text-align: center;
+    background-color: #f5f5f5; /* Light grey background for better visibility */
+  }
+  
+  .App-header {
+    background-color: #e7f6e7; /* Light green background */
+    border-radius: 10px; /* Rounded edges for aesthetics */
+    margin: 20px; /* Space around the header */
+  }
+  
+  /* ... your other styles ... */
+  
+  
+  input, button {
+    padding: 10px 15px;
+    border-radius: 25px;  /* Rounded corners */
+    border: 1px solid #34d399;  /* Greenish border */
+    background-color: white;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s;
+    
+  }
+  
+  button{
+    margin:10px;
+  }
+  
+  button:hover {
+    background-color: #34d399;  /* Change button color on hover */
+    color: white;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  th, td {
+    border: 1px solid #34d399;  /* Greenish border */
+    padding: 8px;
+    text-align: left;
+  }
+
+  th{
+    background-color: #f5f5f5;
+    color:black
+  }
+  
+  /* Media query for mobile screens */
+  @media (max-width: 768px) {
+    input, button {
+      width: 90%;
+    }
+  }
+  /* Dropdown container styling */
+  .dropdown {
+    margin-top: 15px;  /* Spacing between label-input pairs */
+    display: flex;
+    flex-direction: column;  /* Makes sure label is above the dropdown */
+    margin-bottom:15px;
+  }
+  
+  /* Label styling */
+  label {
+    margin-bottom: 10px;  /* Spacing between label and dropdown */
+    font-weight: bold;  /* Makes label text bold */
+    color: #4CAF50;  /* Green color for label text */
+  }
+  
+  /* Dropdown styling */
+  select {
+    padding: 10px 15px;  /* Padding around text inside dropdown */
+    border-radius: 50px;  /* Rounded corners */
+    border: 2px solid #4CAF50;  /* Green border */
+    background-color: white;  /* White background */
+    color: #4CAF50;  /* Green text */
+    outline: none;  /* Removes the default focus outline */
+    cursor: pointer;  /* Changes cursor to a hand when hovering over dropdown */
+    font-size: 16px;  /* Font size of dropdown text */
+  }
+  
+  /* Hover effect for dropdown */
+  select:hover {
+    border-color: #45a049;  /* Slightly darker green for hover effect */
+  }
+  
+  /* Focus effect for dropdown */
+  select:focus {
+    border-color: #087830;  /* Even darker green for focus effect */
+  }
+  
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+  }
+  
+  .table-container {
+    margin-right: 20px; /* Add some space between the table and the chart */
+  }
+  
+  .doughnut-container {
+    width: 20%; /* Adjust the width as needed */
+    flex-grow: 1;
+  }
+  
+  .table-container {
+    max-width: 400px; /* or whatever maximum width you want for your table */
+  }
+  .main-container {
+    min-height: 100vh; /* vh is viewport height */
+  }
+  .your-container {
+    overflow: hidden;
+  }
+  
+  
+  

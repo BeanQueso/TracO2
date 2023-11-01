@@ -207,5 +207,14 @@ def get_today_emissions():
     
     return jsonify(emissions_data)
 
+@app.route('/api/history', methods=['GET'])
+def get_history():
+    results = []
+    with open('data.csv', mode='r', encoding='utf-8-sig') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            results.append(row)
+    return jsonify(results)
+
 if __name__ == "__main__":
     app.run(debug=True)

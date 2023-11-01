@@ -3,6 +3,8 @@ import "./App.css";
 import React, { useState } from "react";
 import Header from "./Header.js";
 import axios from "axios";
+import MyDoughnut from "./MyDoughnut"
+
 
 function ShowElectricity() {
   const [emissions, setEmissions] = useState({});
@@ -231,9 +233,14 @@ function ShowElectricity() {
               <tr>
                 <td>{emissions.carbon_mt} mt</td>
               </tr>
+
             </tbody>
+
           </table>
+          <div className="doughnut-container">
+      </div>
         </div>
+        
       </header>
     </div>
   );

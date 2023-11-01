@@ -6,6 +6,7 @@ import ShowFlight from './ShowFlight';
 import ShowVehicle from './ShowVehicle';
 import ShowShipping from './ShowShipping';
 import ShowFuelCombustion from './ShowFuelCombustion';
+import MyHistory from "./MyHistory"
 import Home from './Home';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/vehicle" element={<ShowVehicle/>}/>
           <Route path="/shipping" element={<ShowShipping/>}/>
           <Route path="/fuelcombustion" element={<ShowFuelCombustion/>}/>
+          <Route path="/history" element={<MyHistory/>}/>
           <Route path="/" element={<Home />} />
         </Routes>
       </div>

@@ -60,3 +60,8 @@ body {
 div {
   box-sizing: border-box;
 }
+
+.main-container {
+  min-height: 100vh; /* vh is viewport height */
+  overflow:hidden
+}
