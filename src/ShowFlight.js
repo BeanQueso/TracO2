@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
-import Header from "./Header.js"
-import axios from "axios"
+import Header from "./Header.js";
+import axios from "axios";
 
 function ShowFlight() {
   const [emissions, setEmissions] = useState({});
@@ -12,31 +12,33 @@ function ShowFlight() {
   const [departureAirport, setDepartureAirport] = useState("");
   const [destinationAirport, setDestinationAirport] = useState("");
 
-  const resetStates=()=>{
+  const HEROKU_API_URL = "https://traco2.herokuapp.com";
+
+  const resetStates = () => {
     setPassengers(0);
     setDistanceUnit("");
     setRoundTrip(false);
     setDepartureAirport("");
     setDestinationAirport("");
-  }
+  };
 
   const handleSubmit = async () => {
     try {
       const response = await fetch(
-        `/api/fetch-flight?attributes=${passengers}&attributes=${distanceUnit}&roundTrip=${roundTrip}&departureAirport=${departureAirport}&destinationAirport=${destinationAirport}`
+        `${HEROKU_API_URL}/api/fetch-flight?attributes=${passengers}&attributes=${distanceUnit}&roundTrip=${roundTrip}&departureAirport=${departureAirport}&destinationAirport=${destinationAirport}`
       );
-  
+
       if (!response.ok) {
         throw new Error(`Request failed with status: ${response.status}`);
       }
-  
+
       const contentType = response.headers.get("content-type");
       console.log("Content Type:", contentType);
-  
+
       const responseData = await response.json(); // Parsing the response directly as JSON
-  
+
       console.log("Response from the server:", responseData);
-  
+
       if (responseData && responseData.carbon_g) {
         setEmissions(responseData);
         console.log(emissions);
@@ -46,17 +48,16 @@ function ShowFlight() {
     } catch (error) {
       console.error("Error fetching data:", error);
       alert('Server encountered an error. Please try again.')
-      resetStates()
+      resetStates();
     }
   };
-
 
   const handleSubmitButton = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/append-data",
+        `${HEROKU_API_URL}/append-data`,
         emissions
-      ); // Adjust the URL based on your Flask server configuration
+      );
       console.log(response.data.message);
       alert("Data submitted successfully!")
     } catch (error) {
@@ -64,18 +65,16 @@ function ShowFlight() {
       alert('Have you clicked on the "Calculate" button?');
     }
   };
-  
-  
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <header className="App-header">
         <div>
           <label>Passengers: </label>
           <input value={passengers} type="number" onChange={(e) => setPassengers(e.target.value)} />
         </div>
-        <div className = "dropdown">
+        <div className="dropdown">
           <label>Distance Unit:</label>
           <select
             value={distanceUnit}

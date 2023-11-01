@@ -2,8 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 import Header from "./Header.js";
-
-import axios from "axios"
+import axios from "axios";
 
 function ShowVehicle() {
   const [emissions, setEmissions] = useState({});
@@ -13,18 +12,20 @@ function ShowVehicle() {
   const [vehicleName, setVehicleName] = useState("");
   const [vehicleYear, setVehicleYear] = useState(0);
 
-  const resetStates=()=>{
+  const HEROKU_API_URL = "https://traco2.herokuapp.com";
+
+  const resetStates = () => {
     setDistanceUnit("");
     setDistanceValue(0);
     setCompanyName("");
     setVehicleName("");
     setVehicleYear(0);
-  }
+  };
 
   const handleSubmit = async () => {
     try {
       const response = await fetch(
-        `/api/fetch-vehicle?attributes=${distanceUnit}&attributes=${distanceValue}&attributes=${companyName}&attributes=${vehicleName}&attributes=${vehicleYear}`
+        `${HEROKU_API_URL}/api/fetch-vehicle?attributes=${distanceUnit}&attributes=${distanceValue}&attributes=${companyName}&attributes=${vehicleName}&attributes=${vehicleYear}`
       );
 
       if (!response.ok) {
@@ -46,17 +47,17 @@ function ShowVehicle() {
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-      alert("Server encountered an error. Please try again.");
-      resetStates()
+      alert('Server encountered an error. Please try again.');
+      resetStates();
     }
   };
 
   const handleSubmitButton = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/append-data",
+        `${HEROKU_API_URL}/append-data`,
         emissions
-      ); // Adjust the URL based on your Flask server configuration
+      );
       console.log(response.data.message);
       alert("Data submitted successfully!")
     } catch (error) {

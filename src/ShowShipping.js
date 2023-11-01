@@ -2,8 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 import Header from "./Header.js";
-import axios from "axios"
-
+import axios from "axios";
 
 function ShowShipping() {
   const [emissions, setEmissions] = useState({});
@@ -13,18 +12,20 @@ function ShowShipping() {
   const [distanceValue, setDistanceValue] = useState(0);
   const [transportMethod, setTransportMethod] = useState("");
 
-  const resetStates=()=>{
+  const HEROKU_API_URL = "https://traco2.herokuapp.com";
+
+  const resetStates = () => {
     setWeightUnit("");
     setWeightValue(0);
     setDistanceUnit("");
     setDistanceValue(0);
     setTransportMethod("");
-  }
+  };
 
   const handleSubmit = async () => {
     try {
       const response = await fetch(
-        `/api/fetch-shipping?attributes=${weightUnit}&attributes=${weightValue}&attributes=${distanceUnit}&attributes=${distanceValue}&attributes=${transportMethod}`
+        `${HEROKU_API_URL}/api/fetch-shipping?attributes=${weightUnit}&attributes=${weightValue}&attributes=${distanceUnit}&attributes=${distanceValue}&attributes=${transportMethod}`
       );
 
       if (!response.ok) {
@@ -46,17 +47,17 @@ function ShowShipping() {
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-        alert('Server encountered an error. Please try again.')
-        resetStates()
+      alert('Server encountered an error. Please try again.');
+      resetStates();
     }
   };
 
   const handleSubmitButton = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/append-data",
+        `${HEROKU_API_URL}/append-data`,
         emissions
-      ); // Adjust the URL based on your Flask server configuration
+      );
       console.log(response.data.message);
       alert("Data submitted successfully!")
     } catch (error) {
@@ -69,7 +70,7 @@ function ShowShipping() {
     <div className="App">
       <Header />
       <header className="App-header">
-      <div className = "dropdown">
+        <div className="dropdown">
           <label>Weight Unit:</label>
           <select
             value={weightUnit}
@@ -90,7 +91,7 @@ function ShowShipping() {
             onChange={(e) => setWeightValue(e.target.value)}
           />
         </div>
-        <div className = "dropdown">
+        <div className="dropdown">
           <label>Distance Unit:</label>
           <select
             value={distanceUnit}
@@ -111,7 +112,7 @@ function ShowShipping() {
             onChange={(e) => setDistanceValue(e.target.value)}
           />
         </div>
-        <div className = "dropdown">
+        <div className="dropdown">
           <label>Transport Method:</label>
           <select
             value={transportMethod}
