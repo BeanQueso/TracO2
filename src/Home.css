@@ -1,0 +1,62 @@
+/* src/Home.css */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 5%;
+    background-color: #e7f6e7; /* Light green */
+  }
+  
+  .welcome-section, .about-us-section {
+    text-align: center;
+    margin: 10px 0;
+    margin-top: 5px;
+  }
+  
+  .navigation-section {
+    margin: 30px 0;
+  }
+  
+  .nav-button {
+    background-color: #00A36C; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+  
+  .nav-button:hover {
+    background-color: #075b3f;
+  }
+  
+  #welcome-message{
+    color:#00A36C;
+    font-size:36px;
+  }
+  .Home .pie-chart {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+.pie-chart-container {
+  margin: 20px auto;
+  width: 70%; /* Adjust width as needed */
+  text-align: center; /* To center the Doughnut chart */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+div {
+  box-sizing: border-box;
+}

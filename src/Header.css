@@ -1,0 +1,54 @@
+.Header-main {
+  width: 100%;
+  background-color: green;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.header-text {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.header-text:hover{
+  text-decoration: none;
+}
+
+.header-text:visited{
+  color:inherit;
+}
+
+.header a {
+  text-decoration: none; /* Removes underline */
+  color: inherit;       /* Uses the parent's color */
+}
+
+.header a:hover {
+  text-decoration: none; /* Ensures underline doesn't appear on hover */
+}
+
+.header a:visited {
+  color: inherit; /* Ensures color doesn't change when link is visited */
+}
+
+.App-logo {
+  height: 90px;
+  width: 90px;
+  margin: 10px;
+}
+
