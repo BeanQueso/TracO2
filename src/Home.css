@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding: 2% 5%;
-    background-color: #e7f6e7; /* Light green */
+    background-color: #e7f6e7;
   }
   
   .welcome-section, .about-us-section {
@@ -18,7 +18,7 @@
   }
   
   .nav-button {
-    background-color: #00A36C; /* Green */
+    background-color: #00A36C; 
     border: none;
     color: white;
     padding: 10px 20px;
@@ -48,8 +48,8 @@
 
 .pie-chart-container {
   margin: 20px auto;
-  width: 70%; /* Adjust width as needed */
-  text-align: center; /* To center the Doughnut chart */
+  width: 70%; 
+  text-align: center; 
 }
 
 body {
@@ -62,6 +62,6 @@ div {
 }
 
 .main-container {
-  min-height: 100vh; /* vh is viewport height */
+  min-height: 100vh; 
   overflow:hidden
 }

@@ -34,7 +34,7 @@ function ShowShipping() {
       const contentType = response.headers.get("content-type");
       console.log("Content Type:", contentType);
 
-      const responseData = await response.json(); // Parsing the response directly as JSON
+      const responseData = await response.json(); 
 
       console.log("Response from the server:", responseData);
 
@@ -56,7 +56,7 @@ function ShowShipping() {
       const response = await axios.post(
         "http://localhost:3000/append-data",
         emissions
-      ); // Adjust the URL based on your Flask server configuration
+      ); 
       console.log(response.data.message);
       alert("Data submitted successfully!")
     } catch (error) {

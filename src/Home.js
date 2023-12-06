@@ -43,17 +43,7 @@ function Home() {
         </Link>
       </section>
 
-      {/*<section className="about-us-section">
-        <h2>About Us</h2>
-        <p>
-          At TraCO<sup>2</sup>, we're dedicated to helping individuals and
-          organizations track and understand their carbon footprint. Our mission
-          is to provide easy-to-use tools that empower everyone to make
-          environmentally conscious decisions. By bringing awareness to carbon
-          emissions, we hope to inspire change and contribute to a greener
-          future.
-        </p>
-      </section>*/}
+      
     </div>
   );
 }

@@ -93,10 +93,9 @@ function MyDoughnut() {
       };
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.font = "bold 20px Arial"; // Adjust size as needed
-      ctx.fillStyle = "#00A36C"; // Adjust color as needed
+      ctx.font = "bold 20px Arial"; 
+      ctx.fillStyle = "#00A36C"; 
 
-      // Compute total emissions from chart data
       const totalEmissionsFromData = chart.data.datasets[0].data
         .reduce((acc, value) => acc + value, 0)
         .toFixed(2);
@@ -117,10 +116,10 @@ function MyDoughnut() {
         options={{
           cutoutPercentage: 20,
           plugins: {
-            insideText: {}, // This enables our custom plugin
+            insideText: {},
           },
         }}
-        plugins={[insideTextPlugin]} // Pass the plugin here
+        plugins={[insideTextPlugin]}
       />
     </div>
   )

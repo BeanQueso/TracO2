@@ -122,7 +122,7 @@ function ShowElectricity() {
       const contentType = response.headers.get("content-type");
       console.log("Content Type:", contentType);
 
-      const responseData = await response.json(); // Parsing the response directly as JSON
+      const responseData = await response.json(); 
 
       console.log("Response from the server:", responseData);
 

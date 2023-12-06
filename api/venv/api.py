@@ -211,7 +211,7 @@ def get_today_emissions():
 def get_history():
     results = []
     with open('data.csv', mode='r', encoding='utf-8-sig') as csvfile:
-        reader = csv.DictReader(csvfile)
+        reader = csv.reader(csvfile)
         for row in reader:
             results.append(row)
     return jsonify(results)
